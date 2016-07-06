@@ -146,16 +146,16 @@
     
     
     
-    [CATransaction begin];
-    
-    
-    [CATransaction setValue:(__bridge id _Nullable)kCFBooleanTrue forKey:kCATransactionDisableActions];
-    
-    self.circlePathLayer.lineWidth = 2*finalRadius;
-    
-    self.circlePathLayer.path = toPath;
-    
-    [CATransaction commit];
+//    [CATransaction begin];
+//    
+//    
+//    [CATransaction setValue:(__bridge id _Nullable)kCFBooleanTrue forKey:kCATransactionDisableActions];
+//    
+//    self.circlePathLayer.lineWidth = 2*finalRadius;
+//    
+//    self.circlePathLayer.path = toPath;
+//    
+//    [CATransaction commit];
     
     CABasicAnimation *lineWidthAnimation = [CABasicAnimation animationWithKeyPath:@"lineWidth"];
     
@@ -178,7 +178,8 @@
     groupAnimation.animations = @[pathAnimation,lineWidthAnimation];
     
     groupAnimation.delegate = self;
-    
+    groupAnimation.removedOnCompletion = NO;//这两句的效果是让动画结束后不会回到原处，必须加
+    groupAnimation.fillMode = kCAFillModeForwards;//这两句的效果是让动画结束后不会回到原处，必须加
     [self.circlePathLayer addAnimation:groupAnimation forKey:@"strokeWidth"];
     
     

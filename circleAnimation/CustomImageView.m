@@ -32,7 +32,7 @@
         self.progressIndicatorView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         
    
-        [self sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1467793803108&di=04dc2bab0dcfb2559f161e270794d8e9&imgtype=jpg&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F5366d0160924ab18292aca2536fae6cd7b890be7.jpg"] placeholderImage:nil options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        [self sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1467797356348&di=99a577b60f40c0a957d46ae455d85c7e&imgtype=jpg&src=http%3A%2F%2Fpic13.nipic.com%2F20110310%2F6400731_100538610118_2.jpg"] placeholderImage:nil options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
             
             self.progressIndicatorView.progress = (CGFloat)receivedSize/(CGFloat)expectedSize;
             
